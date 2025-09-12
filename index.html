@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-commerce Product Compliance Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-shield-alt"></i>
+            <span>Compliance Monitor</span>
+        </div>
+        <ul class="nav-links">
+            <li class="active">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </li>
+            <li>
+                <i class="fas fa-chart-bar"></i>
+                <span>Analytics</span>
+            </li>
+            <li>
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="title-section">
+                        <h1>E-commerce Compliance Monitor</h1>
+                        <p class="subtitle">Track and manage product compliance across your e-commerce platform</p>
+                    </div>
+                </div>
+                <div class="search-section">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="search" placeholder="Search products by name, issue, or compliance status..." class="search-input">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-stats" id="summary">
+            <!-- Summary stats will be inserted here -->
+        </div>
+        
+        <div class="dashboard-filters">
+            <div class="filter-section">
+                <h3><i class="fas fa-filter"></i> Compliance Status</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-border-all"></i> All Products
+                    </button>
+                    <button class="filter-btn" data-filter="compliant">
+                        <i class="fas fa-check-circle"></i> Compliant
+                    </button>
+                    <button class="filter-btn" data-filter="partial-compliant">
+                        <i class="fas fa-exclamation-circle"></i> Partial
+                    </button>
+                    <button class="filter-btn" data-filter="non-compliant">
+                        <i class="fas fa-times-circle"></i> Non-Compliant
+                    </button>
+                </div>
+            </div>
+            <div class="filter-section">
+                <h3><i class="fas fa-tags"></i> Categories</h3>
+                <div class="filter-buttons" id="category-filters">
+                    <!-- Category filters will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3><i class="fas fa-chart-pie"></i> Compliance Distribution</h3>
+                    <div class="chart" id="complianceChart">
+                        <!-- Compliance chart will be inserted here -->
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3><i class="fas fa-chart-bar"></i> Top Issues</h3>
+                    <div class="chart" id="issuesChart">
+                        <!-- Issues chart will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-section">
+                <h2><i class="fas fa-box"></i> Products</h2>
+                <div id="products" class="products-grid">
+                    <!-- Products will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script>
+        // Wait for Chart.js to be fully loaded
+        window.addEventListener('load', function() {
+            if (typeof Chart === 'undefined') {
+                console.error('Chart.js failed to load');
+            }
+        });
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

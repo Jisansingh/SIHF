@@ -1,0 +1,140 @@
+.analytics-container {
+    padding: 30px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.analytics-container .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.chart-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    min-height: 400px;
+}
+
+.chart-card h3 {
+    margin: 0 0 20px 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chart-card h3 i {
+    color: var(--primary-color);
+}
+
+.chart {
+    height: 300px;
+    position: relative;
+}
+
+.analytics-tables {
+    margin-top: 30px;
+}
+
+.table-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 25px;
+}
+
+.table-card h3 {
+    margin: 0 0 20px 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-card h3 i {
+    color: var(--primary-color);
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.analytics-table th,
+.analytics-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.analytics-table th {
+    font-weight: 600;
+    color: var(--text-primary);
+    background: rgba(0,0,0,0.02);
+}
+
+.analytics-table td {
+    color: var(--text-secondary);
+}
+
+.analytics-table td.compliant {
+    color: var(--success-color);
+    font-weight: 500;
+}
+
+.analytics-table td.partial {
+    color: var(--warning-color);
+    font-weight: 500;
+}
+
+.analytics-table td.non-compliant {
+    color: var(--danger-color);
+    font-weight: 500;
+}
+
+.analytics-table td.loading {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-secondary);
+}
+
+.error-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--danger-color);
+}
+
+.error-message i {
+    font-size: 48px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.error-message p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
